@@ -1,7 +1,18 @@
 export default function TodoList (){
+
+    let todos = [
+        'go to the gym',
+        'eat veg'  ,
+        'pick up kids'
+    ]
+
     return(
-        <div>
-         TodoList
-        </div>
+        <ul>
+            {todos.map((todo, todoIndex) => {
+                return (
+                    <li key= {todoIndex}>{todo} </li>
+                )
+            })}
+        </ul>
     )
 }
