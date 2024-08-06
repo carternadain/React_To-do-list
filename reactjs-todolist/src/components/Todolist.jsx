@@ -1,3 +1,6 @@
+import React from 'react'
+
+
 export default function TodoList (){
 
     let todos = [
@@ -7,10 +10,13 @@ export default function TodoList (){
     ]
 
     return(
-        <ul>
+        <ul className="main">
             {todos.map((todo, todoIndex) => {
                 return (
-                    <li key= {todoIndex}>{todo} </li>
+                    <li className="todoItem" key= {todoIndex}>
+                        {todo} 
+                        <i className="fa-solid fa-pen-to-square"></i>
+                    </li>
                 )
             })}
         </ul>
