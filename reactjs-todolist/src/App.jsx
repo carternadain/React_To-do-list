@@ -6,11 +6,19 @@ function App() {
  
   
 const [todos, setTodos] = useState([
-  'go to the gym',
-  'eat veg', 
-  'pick up kids'
+
 ])
 
+function handleDeleteTodo (index){
+const newTodoList = todos.filter((todo, todoIndex) => {
+  return todoIndex !== index
+  })
+  setTodos(newTodoList)
+}
+
+function handleEditTodo (Index){
+
+}
 
 function handleAddTodos(newTodo){
   const newTodoList = [...todos,newTodo]
@@ -19,7 +27,7 @@ function handleAddTodos(newTodo){
   return (
     <>
       <TodoInput handleAddTodos={handleAddTodos} />
-      <TodoList todos={todos} />
+      <TodoList handleDeleteTodo={handleDeleteTodo} todos={todos} />
      </>
   )
 }
