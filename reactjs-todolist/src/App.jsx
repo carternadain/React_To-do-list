@@ -17,6 +17,9 @@ const newTodoList = todos.filter((todo, todoIndex) => {
 }
 
 function handleEditTodo (Index){
+  const valueToBeEdited = todos[index]
+  setTodoValue(valueToBeEdited)
+  handleDeleteTodo(index)
 
 }
 
@@ -26,8 +29,9 @@ function handleAddTodos(newTodo){
 }
   return (
     <>
-      <TodoInput handleAddTodos={handleAddTodos} />
-      <TodoList handleDeleteTodo={handleDeleteTodo} todos={todos} />
+      <TodoInput todoValue={todoValue} setTodoValue ={setTodoValue} 
+      handleAddTodos={handleAddTodos} />
+      <TodoList handleEditTodo={handleEditTodo} handleDeleteTodo={handleDeleteTodo} todos={todos} />
      </>
   )
 }
